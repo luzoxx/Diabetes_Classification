@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h1 {
+        font-size: 45px;
+        margin: 0%;
+        }
+        h2 {
+        font-size: 33px;
+        opacity: 0.65;
+        margin: 0%;
+        }
+        .page_result {
+            display: flex;
+            width: 80%;
+            height: 103%;
+            background-color: #77b6ba;
+        }
+        .page_result-left {
+            display: flex;
+            flex-direction: column;
+            margin-left: 40px;
+            width: 50%;
+            margin-top: 100px;
+        }
+        .page_result_left-title {
+            color: #ffffff;
+            width:560px;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 0.0015em;
+            font: 15.5px Helmet, Freesans, sans-serif;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .page_result_left-content {
+            font-size: 16px;
+            font-weight: 400;
+            font: 15.5px Helmet, Freesans, sans-serif;
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.3em;
+            color: #1d155d;
+            margin-top: 90px;
+        }
+
+        .page_result-btnhome {
+            height: 30px;
+            width: 140px;
+            background-color: #d75d2b;
+            font: 16px Helmet, Freesans, sans-serif;
+            font-family: 'Montserrat', sans-serif;
+            color: #ffffff;
+            text-align: center;
+            padding: 8px 10px;
+            font-weight: 500;
+            line-height: 1em;
+            margin-top: 50px;
+            border: none;
+        }
+        .page_result-btnhome:hover {
+            cursor: pointer;
+            background-color: #1d155d;
+        }
+        #img-page_question {
+            width: 600px;
+            height: 500px;
+            margin-top: 100px;
+            margin-left: -100px;
+        }
+        a {
+            text-decoration: none;
+            font: 15px Helmet, Freesans, sans-serif;
+            font-family: 'Montserrat', sans-serif;
+            color: #ffffff;
+            width: 200px;
+            font-weight: 500;
+        }
+
+        
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="page_result">
+            <div class="page_result-left">
+              <div class="page_result_left-title">
+                <h1>DIABETES TEST</h1>
+                <h2>KNOW YOUR RISK OF DIABETES</h2>
+              </div>
+      
+              <div class="page_result_left-content">
+                <h2>{{ KQ }}</h2>
+              </div>
+      
+              <button class="page_result-btnhome">
+                <a href="/">RESTART NOW</a>
+              </button>
+            </div>
+      
+            <div class="page_result-right">
+                <img src="../static/img_result.png" alt="" id="img-page_question">
+            </div> 
+          </div>
+    </div>
+</body>
+</html>

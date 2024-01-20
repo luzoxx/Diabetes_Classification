@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container" >
+      <!-- trang 1 -->
+      <div class="page_1">
+        <div class="page_1-left">
+          <div class="page1_left-title">
+            <h1>DIABETES TEST</h1>
+            <h2>KNOW YOUR RISK OF DIABETES</h2>
+          </div>
+
+          <div class="page1_left-content">
+            <p>
+              This is an <strong>online diabetes risk assessment</strong> which aims to predict a people’s risk of 
+                developing diabetes. The test is based on the Diabetes Health Indicators Dataset developed that is designed by 
+                <strong>The Behavioral Risk Factor Surveillance System (BRFSS)</strong> - a health related telephone survey that is collected annually by the CDC.
+            </p>
+            <p>
+              The test takes only a couple of minutes to complete. It is a quick, easy, and confidential way to find out your risk of developing diabetes.
+            </p>
+          </div>
+
+          <div class="page1_left-btn">
+            <span>START NOW</span>
+          </div>
+        </div>
+
+        <div class="page_1-right">
+            <img src="../static/img_0.png" alt="" id="img-page1">
+        </div>
+      </div>
+
+      <!-- trang 2 -->
+      <form class="page_question" method="POST" action="/predict">
+        <div class="page_question-left">
+          <div class="page_question_left-title">
+            <h1>DIABETES TEST</h1>
+            <h2>KNOW YOUR RISK OF DIABETES</h2>
+          </div>
+          <!-- Câu 1 -->
+          <div class="question-1 question">
+            <div class="question-1_left-content">
+              <span>Do you have high Blood Pressure ?</span>
+            </div>
+            <ul class="question-1_left-list">
+              <li class="question-1_left-item">
+                <input type="radio" value="1" name="BP" required>
+                <label class="label">Yes</label>
+              </li>
+              <li class="question-1_left-item">
+                <input type="radio" value="0" name="BP" required>
+                <label class="label">No</label>
+              </li>
+            </ul>
+          </div>
+          <!-- Câu 2 -->
+          <div class="question-2 question">
+            <div class="question-2_left-content">
+              <span>Do you have high Cholesterol ?</span>
+            </div>
+            <ul class="question-2_left-list">
+              <li class="question-2_left-item">
+                <input type="radio" value="1" name="CHL" required>
+                <label class="label">Yes</label>
+              </li>
+              <li class="question-2_left-item">
+                <input type="radio" value="0" name="CHL" required>
+                <label class="label">No</label>
+              </li>
+            </ul>
+          </div>
+          <!-- Câu 3 -->
+          <div class="question-3 question">
+            <div class="question-3_left-content">
+              <span>What is your BMI ?</span>
+            </div>
+            <ul class="question-3_left-list">
+              <li class="question-3_left-item">
+                <input type="number" name="bmi" required placeholder="Enter number here" min="0">
+              </li>
+            </ul>
+          </div>
+          <!-- Câu 4 -->
+          <div class="question-4 question">
+            <div class="question-4_left-content">
+              <span>Have you smoked at least 100 cigarettes in your entire life ?</span>
+            </div>
+            <ul class="question-4_left-list">
+              <li class="question-4_left-item">
+                <input type="radio" value="1" name="SMO" required>
+                <label class="label">Yes</label>
+              </li>
+              <li class="question-4_left-item">
+                <input type="radio" value="0" name="SMO" required>
+                <label class="label">No</label>
+              </li>
+            </ul>
+          </div>
+          <!-- Câu 5 -->
+          <div class="question-5 question">
+            <div class="question-5_left-content">
+              <span>Have you had a stroke ?</span>
+            </div>
+            <ul class="question-5_left-list">
+              <li class="question-5_left-item">
+                <input type="radio" value="1" name="STK" required>
+                <label class="label">Yes</label>
+              </li>
+              <li class="question-5_left-item">
+                <input type="radio" value="0" name="STK" required>
+                <label class="label">No</label>
+              </li>
+            </ul>
+          </div>
+          <!-- Câu 6 -->
+          <div class="question-6 question">
+            <div class="question-6_left-content">
+              <span>Have you had coronary heart disease (CHD) or myocardial infarction (MI) ?</span>
+            </div>
+            <ul class="question-6_left-list">
+              <li class="question-6_left-item">
+                <input type="radio" value="1" name="HRT" required>
+                <label class="label">Yes</label>
+              </li>
+              <li class="question-6_left-item">
+                <input type="radio" value="0" name="HRT" required>
+                <label class="label">No</label>
+              </li>
+            </ul>
+          </div>
+          <!-- Câu 7 -->
+          <div class="question-7 question">
+            <div class="question-7_left-content">
+              <span>Did you do any physical activity in past 30 days - not including job ?</span>
+            </div>
+            <ul class="question-7_left-list">
+              <li class="question-7_left-item">
+                <input type="radio" value="1" name="physAct" required>
+                <label class="label">Yes</label>
+              </li>
+              <li class="question-7_left-item">
+                <input type="radio" value="0" name="physAct" required>
+                <label class="label">No</label>
+              </li>
+            </ul>
+          </div>
+          <!-- Câu 8 -->
+          <div class="question-8 question">
+            <div class="question-8_left-content">
+              <span>Are you heavy drinkers (adult men having more than 14 drinks per week 
+                and adult women having more than 7 drinks per week) ?</span>
+            </div>
+            <ul class="question-8_left-list">
+              <li class="question-8_left-item">
+                <input type="radio" value="1" name="DRK" required>
+                <label class="label">Yes</label>
+              </li>
+              <li class="question-8_left-item">
+                <input type="radio" value="0" name="DRK" required>
+                <label class="label">No</label>
+              </li>
+            </ul>
+          </div>
+          <!-- Câu 9 -->
+          <div class="question-9 question">
+            <div class="question-9_left-content">
+              <span>Would you say that in general your health is ?</span>
+            </div>
+            <ul class="question-9_left-list">
+              <li class="question-9_left-item">
+                <input type="radio" value="1" name="genHeal" required>
+                <label class="label">Excellent</label>
+              </li>
+              <li class="question-9_left-item">
+                <input type="radio" value="2" name="genHeal" required>
+                <label class="label">Very good</label>
+              </li>
+              <li class="question-9_left-item">
+                <input type="radio" value="3" name="genHeal" required>
+                <label class="label">Good</label>
+              </li>
+              <li class="question-9_left-item">
+                <input type="radio" value="4" name="genHeal" required>
+                <label class="label">Fair</label>
+              </li>
+              <li class="question-9_left-item">
+                <input type="radio" value="5" name="genHeal" required>
+                <label class="label">Poor</label>
+              </li>
+            </ul>
+          </div>
+          <!-- Câu 10 -->
+          <div class="question-10 question">
+            <div class="question-10_left-content">
+              <span>Now thinking about your mental health, 
+                which includes stress, depression, and problems with emotions, 
+                for how many days during last 30 days ?</span>
+            </div>
+            <ul class="question-10_left-list">
+              <li class="question-10_left-item">
+                <input type="number" name="menHeal" required placeholder="Enter number here" min="0">
+              </li>
+            </ul>
+          </div>
+          <!-- Câu 11 -->
+          <div class="question-11 question">
+            <div class="question-11_left-content">
+              <span>Now thinking about your physical health, 
+                which includes physical illness and injury, 
+                for how many days during last 30 days ?</span>
+            </div>
+            <ul class="question-11_left-list">
+              <li class="question-11_left-item">
+                <input type="number" name="physHeal" required placeholder="Enter number here" min="0">
+              </li>
+            </ul>
+          </div>
+          <!-- Câu 12 -->
+          <div class="question-12 question">
+            <div class="question-12_left-content">
+              <span>Do you have serious difficulty walking or climbing stairs ?</span>
+            </div>
+            <ul class="question-12_left-list">
+              <li class="question-12_left-item">
+                <input type="radio" value="1" name="WLK" required>
+                <label class="label">Yes</label>
+              </li>
+              <li class="question-12_left-item">
+                <input type="radio" value="0" name="WLK" required>
+                <label class="label">No</label>
+              </li>
+            </ul>
+          </div>
+          <!-- Câu 13 -->
+          <div class="question-13 question">
+            <div class="question-13_left-content">
+              <span>Which of following age groups do you belong to ?</span>
+            </div>
+            <ul class="question-13_left-list">
+              <div class="question-13_col-1">
+                <li class="question-13_left-item">
+                  <input type="radio" value="1" name="AGE" required>
+                  <label class="label">Age 18 to 24</label>
+                </li>
+                <li class="question-13_left-item">
+                  <input type="radio" value="2" name="AGE" required>
+                  <label class="label">Age 25 to 29</label>
+                </li>
+                <li class="question-13_left-item">
+                  <input type="radio" value="3" name="AGE" required>
+                  <label class="label">Age 30 to 34</label>
+                </li>
+                <li class="question-13_left-item">
+                  <input type="radio" value="4" name="AGE" required>
+                  <label class="label">Age 35 to 39</label>
+                </li>
+                <li class="question-13_left-item">
+                  <input type="radio" value="5" name="AGE" required>
+                  <label class="label">Age 40 to 44</label>
+                </li>
+                <li class="question-13_left-item">
+                  <input type="radio" value="6" name="AGE" required>
+                  <label class="label">Age 45 to 49</label>
+                </li>
+              </div>
+              <div class="question-13_col-2">
+                <li class="question-13_left-item">
+                  <input type="radio" value="7" name="AGE" required>
+                  <label class="label">Age 50 to 54</label>
+                </li>
+                <li class="question-13_left-item">
+                  <input type="radio" value="8" name="AGE" required>
+                  <label class="label">Age 55 to 59</label>
+                </li>
+                <li class="question-13_left-item">
+                  <input type="radio" value="9" name="AGE" required>
+                  <label class="label">Age 60 to 64</label>
+                </li>
+                <li class="question-13_left-item">
+                  <input type="radio" value="10" name="AGE" required>
+                  <label class="label">Age 65 to 69</label>
+                </li>
+                <li class="question-13_left-item">
+                  <input type="radio" value="11" name="AGE" required>
+                  <label class="label">Age 70 to 74</label>
+                </li>
+                <li class="question-13_left-item">
+                  <input type="radio" value="12" name="AGE" required>
+                  <label class="label">Age 75 to 79</label>
+                </li>
+                <li class="question-13_left-item">
+                  <input type="radio" value="13" name="AGE" required>
+                  <label class="label">Age 80 or older</label>
+                </li>
+              </div>
+              
+            </ul>
+          </div>
+          <!-- Câu 14 -->
+          <div class="question-14 question">
+            <div class="question-14_left-content">
+              <span>Which of following education groups do you belong to ?</span>
+            </div>
+            <ul class="question-14_left-list">
+              <li class="question-14_left-item">
+                <input type="radio" value="1" name="EDU" required>
+                <label class="label">Never attended school or only kindergarten</label>
+              </li>
+              <li class="question-14_left-item">
+                <input type="radio" value="2" name="EDU" required>
+                <label class="label">Grades 1 - 8 (Elementary)</label>
+              </li>
+              <li class="question-14_left-item">
+                <input type="radio" value="3" name="EDU" required>
+                <label class="label">Grades 9 - 11 (Some high school)</label>
+              </li>
+              <li class="question-14_left-item">
+                <input type="radio" value="4" name="EDU" required>
+                <label class="label">Grade 12 or GED (High school graduate)</label>
+              </li>
+              <li class="question-14_left-item">
+                <input type="radio" value="5" name="EDU" required>
+                <label class="label">College 1 year to 3 years (Some college or technical school)</label>
+              </li>
+              <li class="question-14_left-item">
+                <input type="radio" value="6" name="EDU" required>
+                <label class="label">College 4 years or more (College graduate)</label>
+              </li>
+            </ul>
+          </div>
+          <!-- Câu 15 -->
+          <div class="question-15 question">
+            <div class="question-15_left-content">
+              <span>Which of following income groups do you belong to ?</span>
+            </div>
+            <ul class="question-15_left-list">
+              <li class="question-15_left-item">
+                <input type="radio" value="1" name="INC" required>
+                <label class="label">Less than 10.000</label>
+              </li>
+              <li class="question-15_left-item">
+                <input type="radio" value="2" name="INC" required>
+                <label class="label">Less than 15.000 (10.000 to less than 15.000)</label>
+              </li>
+              <li class="question-15_left-item">
+                <input type="radio" value="3" name="INC" required>
+                <label class="label">Less than 20.000 (15.000 to less than 20.000)</label>
+              </li>
+              <li class="question-15_left-item">
+                <input type="radio" value="4" name="INC" required>
+                <label class="label">Less than 25.000 (20.000 to less than 25.000)</label>
+              </li>
+              <li class="question-15_left-item">
+                <input type="radio" value="5" name="INC" required>
+                <label class="label">Less than 35.000 (30.000 to less than 35.000)</label>
+              </li>
+              <li class="question-15_left-item">
+                <input type="radio" value="6" name="INC" required>
+                <label class="label">Less than 50.000 (35.000 to less than 50.000)</label>
+              </li>
+              <li class="question-15_left-item">
+                <input type="radio" value="7" name="INC" required>
+                <label class="label">Less than 75.000 (50.000 to less than 75.000)</label>
+              </li>
+              <li class="question-15_left-item">
+                <input type="radio" value="8" name="INC" required>
+                <label class="label">75.000 or more</label>
+              </li>
+            </ul>
+          </div>
+          <button id="smbt" type="submit" value="submit">
+            SUBMIT
+          </button>
+          </div>
+          <div class="page_question-right">
+            <img src="../static/img_1.png" alt="" id="img-page_question">
+          </div>
+          <!-- <button type="submit" value="submit">
+            Submit
+          </button> -->
+      </form>
+      
+
+      <div class="num-page">
+        <div class="btn-prev">PREVIOUS</div>
+        
+        <div class="btn-next">NEXT</div>
+      </div>
+      <!-- page result -->
+
+     <!-- <div class="page_result">
+      <div class="page_result-left">
+        <div class="page_result_left-title">
+          <h1>DIABETES TEST</h1>
+          <h2>KNOW YOUR RISK OF DIABETES</h2>
+        </div>
+
+        <div class="page_result_left-content">
+          <h2>{{ KQ }}</h2>
+        </div>
+
+        <button class="page_result-btnhome">
+          <span>Restart now</span>
+        </button>
+      </div> -->
+
+      <!-- <div class="page_result-right">
+          <img src="../img_result.png" alt="" id="img-page_question">
+      </div>  -->
+    </div>
+    </div>
+
+    <script src="../static/script.js"></script>
+  </body>
+</html>
