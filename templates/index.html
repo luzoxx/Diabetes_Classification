@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible"
+		content="IE=edge">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0">
+	<title>
+		Diabetes Survey Form
+	</title>
+ 
+	<style>
+		body {
+			background-color: #77b6ba;
+			font-family: Verdana;
+			text-align: center;
+		}
+
+		/* Styling the Form (Color, Padding, Shadow) */
+		form {
+			background-color: #fff;
+			max-width: 500px;
+			margin: 50px auto;
+			padding: 30px 20px;
+			box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+		}
+
+		/* Styling form-control Class */
+		.form-control {
+			text-align: left;
+			margin-bottom: 25px;
+		}
+
+		/* Styling form-control Label */ 
+		.form-control label {
+			display: block;
+			margin-bottom: 10px;
+		}
+
+		/* Styling form-control input, 
+		select, textarea */
+		.form-control input,
+		.form-control select,
+		.form-control textarea {
+			border: 1px solid #777;
+			border-radius: 2px;
+			font-family: inherit;
+			padding: 10px;
+			display: block;
+			width: 95%;
+		}
+
+		/* Styling form-control Radio 
+		button and Checkbox */
+		.form-control input[type="radio"],
+		.form-control input[type="checkbox"] {
+			display: inline-block;
+			width: auto;
+		}
+
+		/* Styling Button */
+		button {
+			background-color: #05c46b;
+			border: 1px solid #777;
+			border-radius: 2px;
+			font-family: inherit;
+			font-size: 21px;
+			display: block;
+			width: 100%;
+			margin-top: 50px;
+			margin-bottom: 20px;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Diabetes Survey Form</h1>
+
+	<!-- Create Form -->
+	<form id="form" method="POST" action="/predict">
+
+		<!-- NAME -->
+		<div class="form-control">
+			<label for="name" id="label-name">
+				What's your name ?	
+			</label>
+
+			<!-- Input NAME -->
+			<input type="text"
+				id="name"
+                name="yname"
+				placeholder="Enter your name">
+		</div>
+
+        <!-- HIGHBP INPUT -->
+		<div class="form-control">
+			<label>
+                Do you have high Blood Pressure ?
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="recommed-1-0">
+				<input type="radio"
+					id="recommed-1-0"
+                    value="1"
+					name="recommedBP">Yes</input>
+			</label>
+			<label for="recommed-2-0">
+				<input type="radio"
+					id="recommed-2-0"
+                    value="0"
+					name="recommedBP">No</input>
+            </label>
+		</div>
+         <!-- HIGHCHOL INPUT -->
+		<div class="form-control">
+			<label>
+                Do you have high Cholesterol ?
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="recommed-1-1">
+				<input type="radio"
+					id="recommed-1-1"
+                    value="1"
+					name="recommedChol">Yes
+                </input>
+			</label>
+			<label for="recommed-2-1">
+				<input type="radio"
+					id="recommed-2-1"
+                    value="0"
+					name="recommedChol">No
+                </input>
+            </label>
+		</div>
+         <!-- BMI INPUT -->
+		<div class="form-control">
+			<label>
+                What's your BMI ?
+			</label>
+
+            <!-- Input BMI -->
+            <input type="number"
+            id="bmi"
+            name="bmi"
+            min="0"
+            required
+            placeholder="Enter your BMI" />
+        </div>
+        <!-- Smoker INPUT -->
+		<div class="form-control">
+			<label>
+                Have you smoked at least 100 cigarettes in your entire life ?
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="recommed-1-2">
+				<input type="radio"
+					id="recommed-1-2"
+                    value="1"
+					name="recommedSMK">Yes
+                </input>
+			</label>
+			<label for="recommed-2-2">
+				<input type="radio"
+					id="recommed-2-2"
+                    value="0"
+					name="recommedSMK">No
+                </input>
+            </label>
+		</div>
+        <!-- STROKE INPUT -->
+		<div class="form-control">
+			<label>
+                Have you had a stroke ?
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="recommed-1-3">
+				<input type="radio"
+					id="recommed-1-3"
+                    value="1"
+					name="recommedSTK">Yes
+                </input>
+			</label>
+			<label for="recommed-2-3">
+				<input type="radio"
+					id="recommed-2-3"
+                    value="0"
+					name="recommedSTK">No
+                </input>
+            </label>
+		</div>
+        <!-- HEART DIS INPUT -->
+		<div class="form-control">
+			<label>
+                Have you had coronary heart disease (CHD) or myocardial infarction (MI) ?
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="recommed-1-4">
+				<input type="radio"
+					id="recommed-1-4"
+                    value="1"
+					name="recommedHRT">Yes
+                </input>
+			</label>
+			<label for="recommed-2-4">
+				<input type="radio"
+					id="recommed-2-4"
+                    value="0"
+					name="recommedHRT">No
+                </input>
+            </label>
+		</div>
+        <!-- PHYSCAL INPUT -->
+		<div class="form-control">
+			<label>
+                Did you do any physical activity in past 30 days - not including job ?
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="recommed-1-5">
+				<input type="radio"
+					id="recommed-1-5"
+                    value="1"
+					name="recommedPHYS">Yes
+                </input>
+			</label>
+			<label for="recommed-2-5">
+				<input type="radio"
+					id="recommed-2-5"
+                    value="0"
+					name="recommedPHYS">No
+                </input>
+            </label>
+		</div>
+        <!-- DRINK INPUT -->
+		<div class="form-control">
+			<label>
+                Are you heavy drinkers (adult men having more than 14 drinks per week and adult women having more than 7 drinks per week) ?
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="recommed-1-6">
+				<input type="radio"
+					id="recommed-1-6"
+                    value="1"
+					name="recommedDRK">Yes
+                </input>
+			</label>
+			<label for="recommed-2-6">
+				<input type="radio"
+					id="recommed-2-6"
+                    value="0"
+					name="recommedDRK">No
+                </input>
+            </label>
+		</div>
+        <!-- GEN HLTH INPUT -->
+		<div class="form-control">
+			<label>
+                Would you say that in general your health is ?
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="recommed-1-7">
+				<input type="radio"
+					id="recommed-1-7"
+                    value="1"
+					name="recommedGEN">Excellent</input>
+			</label>
+			<label for="recommed-2-7">
+				<input type="radio"
+					id="recommed-2-7"
+                    value="2"
+					name="recommedGEN">Very good</input>
+            </label>
+            <label for="recommed-3-7">
+				<input type="radio"
+					id="recommed-3-7"
+                    value="3"
+					name="recommedGEN">Good</input>
+            </label>
+            <label for="recommed-4-7">
+				<input type="radio"
+					id="recommed-4-7"
+                    value="4"
+					name="recommedGEN">Fair</input>
+            </label>
+            <label for="recommed-5-7">
+				<input type="radio"
+					id="recommed-5-7"
+                    value="5"
+					name="recommedGEN">Poor</input>
+            </label>
+		</div>
+         <!-- MENTAL HLTH INPUT -->
+		<div class="form-control">
+			<label>
+                Now thinking about your mental health, 
+                which includes stress, depression, and problems with emotions, 
+                for how many days during last 30 days ?
+			</label>
+
+            <!-- Input mental hlth -->
+            <input type="text"
+            id="mentalHlth"
+            name="mentalHlth"
+            required
+            placeholder="Enter your number of days" />
+        </div>
+
+        <!-- PHYSCAL HLTH INPUT -->
+		<div class="form-control">
+			<label>
+                Now thinking about your physical health, 
+                which includes physical illness and injury, 
+                for how many days during last 30 days ?
+			</label>
+
+            <!-- Input physcal hlth -->
+            <input type="text"
+            id="physHlth"
+            name="physHlth"
+            required
+            placeholder="Enter your number of days" />
+        </div>
+        <!-- WALK CLIMB INPUT -->
+		<div class="form-control">
+			<label>
+                Do you have serious difficulty walking or climbing stairs?
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="recommed-1-8">
+				<input type="radio"
+					id="recommed-1-8"
+                    value="1"
+					name="recommedWALK">Yes
+                </input>
+			</label>
+			<label for="recommed-2-8">
+				<input type="radio"
+					id="recommed-2-8"
+                    value="0"
+					name="recommedWALK">No
+                </input>
+            </label>
+		</div>
+
+
+		<!-- AGE INPUT -->
+		<div class="form-control">
+			<label>
+                WHICH OF THE FOLLOWING AGE GROUPS DO YOU BELONG TO?
+			</label>
+            <!-- Input Type Radio Button -->
+			<label for="recommed-1-9">
+				<input type="radio"
+					id="recommed-1-9"
+                    value="1"
+					name="recommedAGE">Age 18 to 24</input>
+			</label>
+			<label for="recommed-2-9">
+				<input type="radio"
+					id="recommed-2-9"
+                    value="2"
+					name="recommedAGE">Age 25 to 29</input>
+            </label>
+            <label for="recommed-3-9">
+				<input type="radio"
+					id="recommed-3-9"
+                    value="3"
+					name="recommedAGE">Age 30 to 34</input>
+            </label>
+            <label for="recommed-4-9">
+				<input type="radio"
+					id="recommed-4-9"
+                    value="4"
+					name="recommedAGE">Age 35 to 39</input>
+            </label>
+            <label for="recommed-5-9">
+				<input type="radio"
+					id="recommed-5-9"
+                    value="5"
+					name="recommedAGE">Age 40 to 44</input>
+            </label>
+			<label for="recommed-6-9">
+				<input type="radio"
+					id="recommed-6-9"
+                    value="6"
+					name="recommedAGE">Age 45 to 49</input>
+			</label>
+			<label for="recommed-7-9">
+				<input type="radio"
+					id="recommed-7-9"
+                    value="7"
+					name="recommedAGE">Age 50 to 54</input>
+            </label>
+			<label for="recommed-8-9">
+				<input type="radio"
+					id="recommed-8-9"
+                    value="8"
+					name="recommedAGE">Age 55 to 59</input>
+			</label>
+			<label for="recommed-9-9">
+				<input type="radio"
+					id="recommed-9-9"
+                    value="9"
+					name="recommedAGE">Age 60 to 64</input>
+            </label>
+			<label for="recommed-10-9">
+				<input type="radio"
+					id="recommed-10-9"
+                    value="10"
+					name="recommedAGE">Age 65 to 69,</input>
+			</label>
+			<label for="recommed-11-9">
+				<input type="radio"
+					id="recommed-11-9"
+                    value="11"
+					name="recommedAGE">Age 70 to 74</input>
+            </label>
+            <label for="recommed-12-9">
+				<input type="radio"
+					id="recommed-12-9"
+                    value="12"
+					name="recommedAGE">Age 75 to 79</input>
+            </label>
+            <label for="recommed-13-9">
+				<input type="radio"
+					id="recommed-13-9"
+                    value="13"
+					name="recommedAGE">Age 80 or older</input>
+            </label>
+		</div>
+        		<!-- EDUCATION INPUT -->
+		<div class="form-control">
+			<label>
+                WHICH OF THE FOLLOWING EDUCATION GROUPS DO YOU BELONG TO?
+			</label>
+            <!-- Input Type Radio Button -->
+			<label for="recommed-1-10">
+				<input type="radio"
+					id="recommed-1-10"
+                    value="1"
+					name="recommedEDU">Never attended school or only kindergarten</input>
+			</label>
+			<label for="recommed-2-10">
+				<input type="radio"
+					id="recommed-2-10"
+                    value="2"
+					name="recommedEDU">Grades 1 - 8 (Elementary)</input>
+            </label>
+            <label for="recommed-3-10">
+				<input type="radio"
+					id="recommed-3-10"
+                    value="3"
+					name="recommedEDU">Grades 9 - 11 (Some high school)</input>
+            </label>
+            <label for="recommed-4-10">
+				<input type="radio"
+					id="recommed-4-10"
+                    value="4"
+					name="recommedEDU">Grade 12 or GED (High school graduate)</input>
+            </label>
+            <label for="recommed-5-10">
+				<input type="radio"
+					id="recommed-5-10"
+                    value="5"
+					name="recommedEDU">College 1 year to 3 years (Some college or technical school)</input>
+            </label>
+			<label for="recommed-6-10">
+				<input type="radio"
+					id="recommed-6-10"
+                    value="6"
+					name="recommedEDU">College 4 years or more (College graduate)</input>
+			</label>
+        </div>
+
+        <!-- INCOME INPUT -->
+		<div class="form-control">
+			<label>
+                WHICH OF THE FOLLOWING INCOME GROUPS DO YOU BELONG TO?
+			</label>
+            <!-- Input Type Radio Button -->
+			<label for="recommed-1-11">
+				<input type="radio"
+					id="recommed-1-11"
+                    value="1"
+					name="recommedINC">Less than 10.000</input>
+			</label>
+			<label for="recommed-2-11">
+				<input type="radio"
+					id="recommed-2-11"
+                    value="2"
+					name="recommedINC">Less than 15.000 (10.000 to less than 15.000)</input>
+            </label>
+            <label for="recommed-3-11">
+				<input type="radio"
+					id="recommed-3-11"
+                    value="3"
+					name="recommedINC">Less than 20.000 (15.000 to less than 20.000)</input>
+            </label>
+            <label for="recommed-4-11">
+				<input type="radio"
+					id="recommed-4-11"
+                    value="4"
+					name="recommedINC">Less than 25.000 (20.000 to less than 25.000)</input>
+            </label>
+            <label for="recommed-5-11">
+				<input type="radio"
+					id="recommed-5-11"
+                    value="5"
+					name="recommedINC">Less than 35.000 (30.000 to less than 35.000)</input>
+            </label>
+			<label for="recommed-6-11">
+				<input type="radio"
+					id="recommed-6-11"
+                    value="6"
+					name="recommedINC">Less than 50.000 (35.000 to less than 50.000)</input>
+			</label>
+			<label for="recommed-7-11">
+				<input type="radio"
+					id="recommed-7-11"
+                    value="7"
+					name="recommedINC">Less than 75.000 (50.000 to less than 75.000)</input>
+            </label>
+			<label for="recommed-8-11">
+				<input type="radio"
+					id="recommed-8-11"
+                    value="8"
+					name="recommedINC">75.000 or more</input>
+			</label>
+        </div>
+
+		<!-- Multi-line Text Input Control -->
+		<button type="submit" value="submit">
+			Submit
+		</button>
+	</form>
+    <h2>{{ result }}</h2>
+</body>
+</html>
